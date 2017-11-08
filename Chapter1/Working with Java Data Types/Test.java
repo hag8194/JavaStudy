@@ -2,12 +2,15 @@ import java.util.Date;
 
 public class Test 
 {	
+	int testVar;
 	public static void main(String ... args) 
 	{
 		long longval = 3123456789L;
 		String cad;
 		Date myDate;
 		float floatvalue = 5f, anotherOne = 6f, anotherOtherOne = 7f;
+
+		int numericLiteral = 01_000_0;
 
 		cad = "Holis";
 		myDate = new Date();
@@ -25,5 +28,7 @@ public class Test
 		System.out.println(cad + " size is " + cad.length());
 		System.out.println("Date:" + myDate.toString());
 		System.out.println(val + " " + val1 + " " + val3);
+		System.out.println(numericLiteral);
+		System.out.println(new Test().testVar); //Fields in a class are automatically initialized
 	}
 }
