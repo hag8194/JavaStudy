@@ -12,6 +12,8 @@ public class Test
 
 		int numericLiteral = 01_000_0;
 
+		String $123testo_var4 = "holis";
+
 		cad = "Holis";
 		myDate = new Date();
 
@@ -30,5 +32,6 @@ public class Test
 		System.out.println(val + " " + val1 + " " + val3);
 		System.out.println(numericLiteral);
 		System.out.println(new Test().testVar); //Fields in a class are automatically initialized
+		System.out.println($123testo_var4);
 	}
 }

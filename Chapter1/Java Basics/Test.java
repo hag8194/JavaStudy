@@ -10,6 +10,7 @@ Multiple lines comment
 
 import java.util.Random;
 import java.util.Date;
+import testo.*;
 
 public class Test {
 	
@@ -25,7 +26,7 @@ public class Test {
 
 		System.out.println(new Random().nextInt(10));
 		System.out.println(new java.sql.Date(123456789)); //Resolved naming conflict
-	
+		System.out.println(new Test1().a);
 	}
 }
 
