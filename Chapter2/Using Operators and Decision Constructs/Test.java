@@ -6,6 +6,7 @@ public class Test
 		short c = 1, d = 4;
 		short e = (short)(c + d);
 		long f = 1;
+		
 
 		boolean bool = true;
 		Test testo = null;
@@ -17,6 +18,10 @@ public class Test
 		System.out.println(1.999999888f);
 		System.out.println(e);
 
+		System.out.println("a: " + a);
+		int g = a++ + a++;
+		System.out.println("g: " + g + " a: " + a);
+
 		try {
 			System.out.println(testo != null & testo.testMethod());
 		} catch(Exception ex) {
@@ -27,7 +32,19 @@ public class Test
 		System.out.println(f);
 
 		System.out.println("x: " + x + " y: " + y);
-		System.out.println(test1.a);
+		//System.out.println(test1.a);
+
+		for(int i = 0; i < 10; i++)
+			System.out.print(i + " ");
+
+		System.out.println("");
+
+		for(int i = (a = 6); i < 10; ++i)
+			System.out.print(i + " ");
+
+		switch(a) {
+
+		}
 	}
 
 	public boolean testMethod() {
