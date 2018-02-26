@@ -6,7 +6,7 @@ import food.DogFood;
 import food.FishFood;
 import java.util.function.Predicate;
 
-public class Test 
+public class Test implements Action
 {	
 	public static void main(String ... args) 
 	{
@@ -34,6 +34,18 @@ public class Test
 		System.out.println("-----------------");
 		System.out.println("Animal count: " + Fish.getAnimalCount());
 		System.out.println("Animal count: " + Dog.getAnimalCount());
+
+		Test test = new Test();
+		CanSwim canSwim = test;
+
+		canSwim.swim();
+		canSwim.checkAtmosphere();
+
+		CanHope canHope = (CanHope)canSwim;
+
+		canHope.beforeHope();
+		canHope.hope();
+		canHope.checkAtmosphere();
 	}
 
 	static void printAnimalAge(Predicate<Animal> animalCheck, Animal animal) {
@@ -49,4 +61,37 @@ public class Test
 		}
 		
 	}
+
+	public void swim() {
+		System.out.println("Swimming!!");
+	}
+
+	public void hope() {
+		System.out.println("Hopping!!");	
+	}
+
+	public void checkAtmosphere() {
+		System.out.println("Checking around!!");	
+	}
+}
+
+abstract interface CanSwim {
+	public abstract void swim();
+	void checkAtmosphere();
+}
+
+interface CanHope {
+	void hope();
+	default void checkAtmosphere() {
+		System.out.println("Gosh!");
+	}
+	default void beforeHope() {
+		System.out.println("Checking Floor!!");
+	}
+}
+
+interface Action extends CanSwim, CanHope {
+	default void checkAtmosphere() {
+		System.out.println("Gosh!");
+	}	
 }
