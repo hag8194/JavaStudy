@@ -58,7 +58,7 @@ overriding).
 
 3. Abstract classes may not be marked as private or final.
 
-4. An abstract class that extends another abstract class inherits all of its abstract methodsas its own abstract methods.
+4. An abstract class that extends another abstract class inherits all of its abstract methods as its own abstract methods.
 
 5. The first concrete class that extends an abstract class must provide an implementation
 for all of the inherited abstract methods.
@@ -132,3 +132,24 @@ or overridden by a class that implements the interface.
 
 4. Like all methods in an interface, a default method is assumed to be public and will not
 compile if marked as private or protected.
+
+
+-----------------Basic Polymorphism Rules-----------------
+
+1. The type of the object determines which properties exist within the object in memory.
+
+2. The type of the reference to the object determines which methods and variables are
+accessible to the Java program.
+
+
+-----------------Casting Variables Rules-----------------
+
+1. Casting an object from a subclass to a superclass doesn’t require an explicit cast.
+
+2. Casting an object from a superclass to a subclass requires an explicit cast.
+
+3. The compiler will not allow casts to unrelated types.
+
+4. Even when the code compiles without issue, an exception may be thrown at runtime if
+the object being cast is not actually an instance of that class.
+

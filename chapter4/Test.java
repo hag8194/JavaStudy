@@ -90,7 +90,9 @@ class Animal {
 	private String species;
 	private boolean canHop;
 	private boolean canSwim;
+
 	public Animal(String speciesName, boolean hopper, boolean swimmer) {
+		this();
 		species = speciesName;
 		canHop = hopper;
 		canSwim = swimmer;

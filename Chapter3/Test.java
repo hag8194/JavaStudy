@@ -148,10 +148,13 @@ public class Test
 			.plusMonths(2)
 			.minusYears(1);
 		LocalTime time1 = LocalTime.of(12, 8, 30);
-		LocalDateTime localDateTime = LocalDateTime.of(date1, time1);
+		LocalDateTime localDateTime = LocalDateTime.of(date1, time1)
+			.plusHours(2)
+			.plusSeconds(30);
+
 		System.out.println(date1);
 		System.out.println(time1);
-		System.out.println(localDateTime);
+		System.out.println("LocalDateTime: " + localDateTime);
 
 		Period period = Period.ofDays(2);
 		Duration duration = Duration.ofHours(2);
@@ -171,6 +174,34 @@ public class Test
 		localDateTime = LocalDateTime.parse("2017-12-01T02:11");		
 		System.out.println(localDateTime);
 
+		LocalDateTime testoDateTime = LocalDateTime.of(2018, Month.MARCH, 13, 15, 32);
+		DateTimeFormatter testoFormatter = DateTimeFormatter.ofPattern("yyyy/MMM/dd@| hh:mm:ss");
+		System.out.println("testoDateTime: " + testoDateTime.format(testoFormatter));
+
+		LocalDate testo1DateTime = LocalDate.parse("2018-03-13 +!@", DateTimeFormatter.ofPattern("yyyy-MM-dd +!@"));
+
+		System.out.println(testo1DateTime);
+
+		StringBuilder sb = new StringBuilder("testo");
+		StringBuilder sb1 = sb;
+
+		System.out.println("SB capacity: " + sb.capacity() + " SB value: " + sb);
+		sb.append("anim");
+		System.out.println("SB capacity: " + sb.capacity() +" SB value: " + sb);
+		sb.append("a");
+		System.out.println("SB capacity: " + sb.capacity() + " SB value: " + sb);
+
+		System.out.println("indexof a: " + sb.indexOf("a"));
+
+		System.out.println("==: " + (sb == sb1));
+		System.out.println("equals: " + sb.equals(sb1));
+
+		String testoCad1 = "test ";
+		String testCad2 = testoCad1.toString();
+		
+		System.out.println("==: " + (testoCad1 == testCad2));
+		System.out.println("equals: " + testoCad1.equals(testCad2));		
+		
 		/*
 		*	String: Repasar return types de los métodos 							- Listo!	
 		*	StringBuilder: No conozco todos los return types de sus métodos			- Listo!	
@@ -182,6 +213,14 @@ public class Test
 		*
 		*
 		*/
+	}
+
+	public static final void testoMethod() {
+
+	}
+
+	protected static int testoMethod(int b) {
+		return 0;
 	}
 
 }

@@ -1,6 +1,6 @@
 public class Test {
 	enum Testo{
-
+		Test1, Test2, Test3
 	}
 	public static void main(String args []) {
 		int hourOfDay = 15;
@@ -22,6 +22,7 @@ public class Test {
 		 System.out.println("Weekday");
 		 case 0:
 		 System.out.println("Sunday");		
+		 break;
 		 case 6:
 		 System.out.println("Saturday");
 		 break;
@@ -49,18 +50,27 @@ public class Test {
 		values[0] = 10;
 		values[1] = new Integer(5);
 		values[2] = 15;
-		for(int i=1; i<values.length; i++) {
-		 System.out.print(values[i]-values[i-1]);
+		
+		int a;
+		float b;
+		for(a = 0, b = 1;true && true && true;a++, b += 5) {
+		 //System.out.print(values[i] - values[i - 1]);
+			if(a == -1) break;
+			System.out.println("I'am infinite!!!" + a + " " + b);
 		}
+		System.out.println();
 
 		int[][] myComplexArray = {{5,2,1,3},{3,9,8,9},{5,7,12,7}};
 		OUTER_LOOP: for(int[] mySimpleArray : myComplexArray) {
-		 INNER_LOOP: for(int i=0; i<mySimpleArray.length; i++) {
-		 System.out.print(mySimpleArray[i]+"\t");
-		 }
-		 System.out.println();
+			INNER_LOOP: for(int i=0; i<mySimpleArray.length; i++) {
+				if(mySimpleArray[i] == 2) {
+					System.out.print(" ");
+					break;
+				}
+				System.out.print(mySimpleArray[i]+"\t");
+			}
+			System.out.println();
 		}
-
 	}
 
 	private void testMethod(Object param) {

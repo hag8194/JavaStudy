@@ -10,7 +10,7 @@ public class Test implements Action
 {	
 	public static void main(String ... args) 
 	{
-		Predicate<Animal> animalCheck = animal -> {
+		Predicate<Animal> animalCheck = (animal) -> {
 			try {
 				return animal.getAge() > 0;
 			} catch(InvalidAgeException e) {
@@ -77,7 +77,8 @@ public class Test implements Action
 
 abstract interface CanSwim {
 	public abstract void swim();
-	void checkAtmosphere();
+	public default void checkAtmosphere() {
+	}
 }
 
 interface CanHope {
@@ -92,6 +93,6 @@ interface CanHope {
 
 interface Action extends CanSwim, CanHope {
 	default void checkAtmosphere() {
-		System.out.println("Gosh!");
+		System.out.println("Gosh Action!");
 	}	
 }

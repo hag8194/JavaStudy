@@ -45,6 +45,8 @@ public class Test
 		switch(a) {
 
 		}
+		System.out.println();
+		
 	}
 
 	public boolean testMethod() {
